@@ -1,0 +1,16 @@
+{
+  "name": "Winamp Orange",
+  "background": "bg_winamp.png",
+  "orange": "#FF8C00",
+  "orange2": "#FFB000",
+  "amber": "#FFD27A",
+  "black": "#101010",
+  "dark": "#161616",
+  "panel": "#1E1E1E",
+  "panel2": "#262626",
+  "line": "#3A3A3A",
+  "text": "#FFF4E5",
+  "muted": "#9A9288",
+  "hover": "#FFA733",
+  "button_hover": "#333333"
+}
