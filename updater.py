@@ -9,9 +9,9 @@ import tkinter as tk
 from tkinter import messagebox
 import threading
 
-# ВАШИ ДАННЫЕ (замените на свои)
+# ВАШИ ДАННЫЕ
 GITHUB_REPO = "BortiStar/TwitchChatReader" 
-CURRENT_VERSION = "1.0.0" # Меняйте при каждом релизе
+CURRENT_VERSION = "1.0.1"
 
 def get_latest_release():
     """Получает информацию о последнем релизе с GitHub"""

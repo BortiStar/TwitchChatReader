@@ -129,6 +129,7 @@ class TwitchChatApp(ctk.CTk):
         self.channel_entry.grid(row=0, column=0, columnspan=3, sticky="ew",
                                 padx=(12, 12), pady=(10, 4))
         self.channel_entry.bind("<Return>", lambda e: self.connect())
+        self.channel_entry.bind("<Control-Key>", self._force_paste)
 
         self.connect_btn = ctk.CTkButton(
             top_frame, text="Подключиться", command=self.connect,
@@ -259,6 +260,19 @@ class TwitchChatApp(ctk.CTk):
             self.iconphoto(True, self._icon_photo)
         except Exception:
             pass
+
+    @staticmethod
+    def _force_paste(event):
+        """Принудительная вставка/копирование/вырезание при не-английской раскладке"""
+        if event.keycode == 86 and event.keysym != 'v':
+            event.widget.event_generate('<<Paste>>')
+            return "break"
+        elif event.keycode == 67 and event.keysym != 'c':
+            event.widget.event_generate('<<Copy>>')
+            return "break"
+        elif event.keycode == 88 and event.keysym != 'x':
+            event.widget.event_generate('<<Cut>>')
+            return "break"
 
     def _fix_taskbar_icon(self):
         try:
